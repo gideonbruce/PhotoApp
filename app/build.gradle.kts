@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.bruceotieno.photoapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.bruceotieno.photoapp"
