@@ -14,5 +14,5 @@ interface PhotosApiService {
      * HTTP method
      */
     @GET("photos")
-    suspend fun getPhotos(): List<PhotosAp>
+    suspend fun getPhotos(): List<PhotosApp>
 }
