@@ -12,6 +12,9 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.bruceotieno.photoapp.data.PhotoAppRepository
 import com.bruceotieno.photoapp.model.PhotosApp
 import com.bruceotieno.photoapp.PhotoApplication
+import kotlinx.coroutines.launch
+import retrofit2.HttpException
+import java.io.IOException
 
 
 /**
@@ -51,8 +54,8 @@ class PhotosViewModel(private val photoAppRepository: PhotoAppRepository) : View
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
-                val application = (this[APPLICATION_KEY] as PhotosAppApplication)
-                val photoAppRepository = application.container.photoAppRepository
+                val application = (this[APPLICATION_KEY] as PhotoApplication)
+                val photoAppRepository = application.container.photosAppRepository
                 PhotosViewModel(photoAppRepository = photoAppRepository)
             }
         }

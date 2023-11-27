@@ -14,10 +14,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.bruceotieno.photoapp.R
 import com.bruceotieno.photoapp.ui.screens.HomeScreen
 import com.bruceotieno.photoapp.ui.screens.PhotosViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PhotoApp() {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
@@ -40,6 +42,7 @@ fun PhotoApp() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PhotoTopAppBar(
     scrollBehavior: TopAppBarScrollBehavior,

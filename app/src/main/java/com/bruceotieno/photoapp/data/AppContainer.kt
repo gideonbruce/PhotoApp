@@ -10,7 +10,7 @@ import okhttp3.MediaType.Companion.toMediaType
  *  dependency injection at application level
  */
 interface AppContainer {
-    val photosAppRepository: PhotosAppRepository
+    val photosAppRepository: PhotoAppRepository
 }
 
 /**
@@ -20,7 +20,7 @@ interface AppContainer {
  */
 
 class DefaultAppContainer : AppContainer {
-    private val baseUrl = "#/"
+    private val baseUrl = "https:api.unsplash.com/photos/"
 
     /**
      * use the retrofit builder to build a retrofit object using a kotlinx.serialization converter
@@ -42,6 +42,7 @@ class DefaultAppContainer : AppContainer {
      *  DI implementation
      */
 
-    override val photosAppRepository: PhotosAppRepository
-        NetworkPhotoAppRepository(retrofitService)
+    override val photosAppRepository: PhotoAppRepository by lazy {
+        NetworkPhotosRepository(retrofitService)
+    }
 }

@@ -9,7 +9,7 @@ import com.bruceotieno.photoapp.network.PhotosApiService
 
 interface PhotoAppRepository {
     /** Fetches list of photos from api */
-    suspend fun getPhotos(): List<Photos>
+    suspend fun getPhotos(): List<PhotosApp>
 }
 
 /**
@@ -19,5 +19,5 @@ class NetworkPhotosRepository(
     private val photosApiService: PhotosApiService
 ) : PhotosApiService {
     /** fetch list */
-    override suspend fun getPhotos(): List<Photos> = photosApiService.getPhotos()
+    override suspend fun getPhotos(): List<PhotosApp> = photosApiService.getPhotos()
 }
