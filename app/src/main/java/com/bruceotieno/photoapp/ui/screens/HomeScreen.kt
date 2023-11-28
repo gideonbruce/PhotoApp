@@ -30,6 +30,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.bruceotieno.photoapp.R
 import com.bruceotieno.photoapp.model.PhotosApp
+import com.bruceotieno.photoapp.ui.theme.PhotoAppTheme
 
 @Composable
 fun HomeScreen(
@@ -51,7 +52,7 @@ fun HomeScreen(
 }
 
 /**
- * disp loading message
+ * display
  */
 
 @Composable
@@ -133,5 +134,14 @@ fun PhotosAppCard(
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxWidth()
         )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PhotosGridScreenPreview() {
+    PhotoAppTheme {
+        val mockData = List(10) { PhotosApp("$it", "") }
+        PhotosGridScreen(mockData)
     }
 }
