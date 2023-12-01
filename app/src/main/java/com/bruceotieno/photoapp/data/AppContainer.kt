@@ -5,6 +5,8 @@ import retrofit2.Retrofit
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
+import androidx.compose.runtime.getValue
+import kotlin.reflect.KProperty
 
 /**
  *  dependency injection at application level
@@ -42,4 +44,9 @@ class DefaultAppContainer : AppContainer {
     override val photosAppRepository: PhotoAppRepository by lazy {
         NetworkPhotosAppRepository(retrofitService)
     }
+
+    //imma try adding import androidx.compose.runtime.getValue for the by
+
+
 }
+

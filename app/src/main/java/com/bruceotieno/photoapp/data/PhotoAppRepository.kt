@@ -2,6 +2,7 @@ package com.bruceotieno.photoapp.data
 
 import com.bruceotieno.photoapp.model.PhotosApp
 import com.bruceotieno.photoapp.network.PhotosApiService
+import androidx.compose.runtime.getValue
 
 /**
  *  repository that fetch photos List from photos api
