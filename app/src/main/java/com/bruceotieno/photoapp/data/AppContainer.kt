@@ -31,16 +31,10 @@ class DefaultAppContainer : AppContainer {
         .baseUrl(baseUrl)
         .build()
 
-    /**
-     *  Retrofit service object for creating api calls
-     */
     private val retrofitService: PhotosApiService by lazy {
         retrofit.create(PhotosApiService::class.java)
     }
 
-    /**
-     *  DI implementation
-     */
 
     override val photosAppRepository: PhotoAppRepository by lazy {
         NetworkPhotosRepository(retrofitService)
