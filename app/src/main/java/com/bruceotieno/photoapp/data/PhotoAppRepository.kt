@@ -4,7 +4,7 @@ import com.bruceotieno.photoapp.model.PhotosApp
 import com.bruceotieno.photoapp.network.PhotosApiService
 
 /**
- *  repo that fetch photos List from photos api
+ *  repository that fetch photos List from photos api
  */
 
 interface PhotoAppRepository {
@@ -15,9 +15,9 @@ interface PhotoAppRepository {
 /**
  *  network implementation of repository that fetch photos list
  */
-class NetworkPhotosRepository(
+
+class NetworkPhotosAppRepository(
     private val photosApiService: PhotosApiService
 ) : PhotosApiService {
-    /** fetch list */
     override suspend fun getPhotos(): List<PhotosApp> = photosApiService.getPhotos()
 }

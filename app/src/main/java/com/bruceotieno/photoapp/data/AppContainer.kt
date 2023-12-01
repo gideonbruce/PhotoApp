@@ -36,7 +36,10 @@ class DefaultAppContainer : AppContainer {
     }
 
 
+    /**
+     *  whats this error 'Property delegate must have a 'getValue(DefaultAppContainer, KProperty*>)' method. None of the following functions are suitable.'
+     * */
     override val photosAppRepository: PhotoAppRepository by lazy {
-        NetworkPhotosRepository(retrofitService)
+        NetworkPhotosAppRepository(retrofitService)
     }
 }
