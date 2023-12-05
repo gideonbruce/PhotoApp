@@ -13,12 +13,10 @@ interface PhotoAppRepository {
     suspend fun getPhotos(): List<PhotosApp>
 }
 
-/**
- *  network implementation of repository that fetch photos list
- */
 
 class NetworkPhotosAppRepository(
     private val photosApiService: PhotosApiService
-) : PhotosApiService {
+) : PhotoAppRepository {
     override suspend fun getPhotos(): List<PhotosApp> = photosApiService.getPhotos()
 }
+
